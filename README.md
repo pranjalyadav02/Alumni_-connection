@@ -86,7 +86,7 @@ A complete web application for students, alumni, and administrators to connect, 
 
 ##  Project Structure
 
-`
+
 umcp/
  frontend/                 # React frontend application
     src/
@@ -104,7 +104,7 @@ umcp/
     package.json
  firebase.json            # Firebase configuration
  README.md
-`
+
 
 ##  Features Overview
 
