@@ -1,8 +1,9 @@
 ﻿import { useState } from 'react'
 import RichTextEditor from '../components/RichTextEditor'
 import { useDispatch, useSelector } from 'react-redux'
-import { createPost, PostType } from '../features/posts/postsSlice'
-import { AppDispatch, RootState } from '../store/store'
+import { createPost } from '../features/posts/postsSlice'
+import type { PostType } from '../features/posts/postsSlice'
+import type{  AppDispatch, RootState } from '../store/store'
 import { useNavigate } from 'react-router-dom'
 import { containsProfanity } from '../lib/moderation'
 

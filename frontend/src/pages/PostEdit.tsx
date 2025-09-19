@@ -1,7 +1,7 @@
 ﻿import { useEffect, useState } from 'react'
 import RichTextEditor from '../components/RichTextEditor'
 import { useDispatch, useSelector } from 'react-redux'
-import { RootState, AppDispatch } from '../store/store'
+import type { RootState, AppDispatch } from '../store/store'
 import { updatePost, fetchPosts } from '../features/posts/postsSlice'
 import { useNavigate, useParams } from 'react-router-dom'
 import { containsProfanity } from '../lib/moderation'

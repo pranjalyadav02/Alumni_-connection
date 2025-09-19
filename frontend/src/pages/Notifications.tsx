@@ -1,6 +1,6 @@
 ﻿import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '../store/store'
+import type { RootState } from '../store/store'
 import { markRead, clearAll, addNotification } from '../features/notifications/notificationsSlice'
 import { collection, onSnapshot, orderBy, query, where } from 'firebase/firestore'
 import { db } from '../lib/firebase'
@@ -13,14 +13,14 @@ export default function Notifications() {
 
   useEffect(() => {
     if (!user) return
-    
+
     // Listen for new notifications
     const q = query(
       collection(db, 'notifications'),
       where('userId', '==', user.uid),
       orderBy('createdAt', 'desc')
     )
-    
+
     const unsub = onSnapshot(q, (snap) => {
       snap.docChanges().forEach((change) => {
         if (change.type === 'added') {
@@ -35,18 +35,18 @@ export default function Notifications() {
         }
       })
     })
-    
+
     return () => unsub()
   }, [dispatch, user])
 
   async function markAsRead(id: string) {
     dispatch(markRead(id))
-    // In a real app, you'd update the database here
+    // TODO: update database
   }
 
   async function clearAllNotifications() {
     dispatch(clearAll())
-    // In a real app, you'd update the database here
+    // TODO: update database
   }
 
   if (!user) {
@@ -67,7 +67,7 @@ export default function Notifications() {
             </button>
           )}
         </div>
-        
+
         <div className="divide-y">
           {items.length === 0 ? (
             <div className="p-8 text-center text-gray-500">
@@ -77,7 +77,7 @@ export default function Notifications() {
             items.map(n => (
               <div 
                 key={n.id} 
-                className={p-4 hover:bg-gray-50 }
+                className="p-4 hover:bg-gray-50"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">

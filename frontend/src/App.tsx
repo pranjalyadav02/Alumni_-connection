@@ -1,7 +1,7 @@
 ﻿import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { initAuthListener } from './features/auth/authSlice'
-import { RootState, AppDispatch } from './store/store'
+import type { RootState, AppDispatch } from './store/store'
 import AppRoutes from './routes/AppRoutes'
 import { initMessaging, onForegroundMessage, requestFcmToken } from './lib/fcm'
 
@@ -26,7 +26,7 @@ export default function App() {
   }, [])
 
   if (status === 'loading') {
-    return <div className=\"min-h-screen grid place-content-center\">Loading...</div>
+    return <div className="min-h-screen grid place-content-center">Loading...</div>
   }
 
   return <AppRoutes isAuthed={!!user} role={user?.role} />

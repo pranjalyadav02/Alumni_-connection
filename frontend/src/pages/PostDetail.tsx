@@ -1,6 +1,6 @@
 ﻿import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { RootState, AppDispatch } from '../store/store'
+import type { RootState, AppDispatch } from '../store/store'
 import { useParams } from 'react-router-dom'
 import { fetchPosts, incrementViews } from '../features/posts/postsSlice'
 import { doc, getDoc } from 'firebase/firestore'
