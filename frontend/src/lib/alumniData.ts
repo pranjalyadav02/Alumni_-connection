@@ -3,10 +3,10 @@
 
 export const alumniData = [
   {
-    name: "Aarav Sharma",
-    email: "aarav.sharma01@gmail.com",
-    linkedin: "https://www.linkedin.com/in/aarav-sharma",
-    college: "Indian Institute of Technology Delhi",
+    name: "Harsh Patidar",
+    email: "harshpatidar18@gmail.com",
+    linkedin: "https://www.linkedin.com/in/harshpatidar18",
+    college: "Devi Ahilya Vishwavidhyalaya",
   },
   {
     name: "Priya Nair",
