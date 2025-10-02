@@ -18,7 +18,7 @@ declare global {
 // Initialize Firebase Admin
 if (!getApps().length) {
   initializeApp({
-    projectId: process.env.FIREBASE_PROJECT_ID || "demo",
+    projectId: process.env.FIREBASE_PROJECT_ID || "destudent-alumni-platform-46a98mo",
   });
 }
 
